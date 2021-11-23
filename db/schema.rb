@@ -10,10 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_22_185420) do
+ActiveRecord::Schema.define(version: 2021_11_22_231357) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "games", force: :cascade do |t|
+    t.integer "question_quantity"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "jwt_denylist", force: :cascade do |t|
     t.string "jti", null: false
@@ -28,6 +34,7 @@ ActiveRecord::Schema.define(version: 2021_11_22_185420) do
     t.integer "order"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "game_id"
   end
 
   create_table "responses", force: :cascade do |t|
@@ -42,6 +49,7 @@ ActiveRecord::Schema.define(version: 2021_11_22_185420) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "game_id"
   end
 
   create_table "users", force: :cascade do |t|
