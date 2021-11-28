@@ -4,7 +4,7 @@ class Team < ApplicationRecord
   has_many :correctly_answered_questions, 
     -> { where("responses.answered_correctly = true") }, through: :responses, source: :question
 
-  def get_score
+  def score
     self.correctly_answered_questions.sum(:points)
   end
 end

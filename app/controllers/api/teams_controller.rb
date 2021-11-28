@@ -5,7 +5,8 @@ class Api::TeamsController < ApplicationController
 
     render json: {
       game: game,  
-      teams: teams
+      teams: teams, each_serializer: TeamSerializer
     }
+  
   end
 end
