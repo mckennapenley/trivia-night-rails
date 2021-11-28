@@ -26,11 +26,7 @@ class Api::GamesController < ApplicationController
     render json: game
   end
 
-  # GET /api/games
-  def show_question
-  #   render json: { game_id: @game }
-  end
-
+ 
   def end_game
   end
 end
