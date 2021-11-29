@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     post 'games/start_game', to: 'games#start_game'
     post 'games/:game_id/questions/:order', to: 'questions#show'
     post 'games/:game_id/teams', to: 'teams#index'
+    post 'games/:game_id/questions/:order/create', to: 'responses#create'
   end
 
   
