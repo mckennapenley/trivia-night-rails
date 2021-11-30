@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     post 'games/:game_id/questions/:order', to: 'questions#show'
     post 'games/:game_id/teams', to: 'teams#index'
     post 'games/:game_id/questions/:order/create', to: 'responses#create'
+    post 'games/:game_id/end_game', to: 'games#end_game'
   end
 
   

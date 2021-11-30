@@ -28,6 +28,13 @@ class Api::GamesController < ApplicationController
 
  
   def end_game
+    game = Game.find(params[:game_id])
+    teams = game.teams
+
+    render json: {  
+    teams: teams.map { |team| TeamSerializer.new(team) }
+    }
+
   end
 end
 

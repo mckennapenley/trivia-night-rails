@@ -9,12 +9,12 @@ class Api::ResponsesController < ApplicationController
 
     teams = game.teams
 
-   
+    
 
     if exisiting_response && (exisiting_response.answered_correctly != params[:answered_correctly])
-      exisiting_response.update!(answered_correctly:params[:answered_correctly])
+      exisiting_response.update!(answered_correctly: params[:answered_correctly])
     elsif !exisiting_response 
-      Response.create(answered_correctly:params[:answered_correctly], team_id:params[:team_id],question_id:question_id)
+      Response.create(answered_correctly: params[:answered_correctly], team_id: params[:team_id], question_id: question_id)
     end
 
     render json: {  
