@@ -1,3 +1,5 @@
+# Trivia Night
+
 [Link](https://github.com/mckennapenley/trivia-night-rails) to React frontend
 
 Will be deployed to Heroku in the near future!
@@ -21,7 +23,7 @@ Builts with:
 ## Screenshot
 
 <p align="center">
-<img src="src/images/Trivia_Night_Screenshot.png"  height="500">
+<img src="app/images/Trivia_Night_Screenshot.png"  height="500">
 </p>
 
 #
@@ -30,3 +32,5 @@ Builts with:
 
 - Add capability to present questions with multiple choice answers
 - Create Question has many Responses relationship so users can see and edit previous responses to previous questions
+- Add timer countdown clock
+- Add ability to show/hide answer
