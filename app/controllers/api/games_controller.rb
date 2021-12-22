@@ -22,17 +22,7 @@ class Api::GamesController < ApplicationController
     render json: created_game
   end
 
-  def end_game
-    render json: {  
-      teams: game.teams.map { |team| TeamSerializer.new(team) }
-    }
-  end
-
   private
-
-  def game
-    Game.find(params[:game_id])
-  end
 
   def questions
     QuestionService.get_questions(question_quantity, game_difficulty)
