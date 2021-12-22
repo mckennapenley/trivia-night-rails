@@ -1,6 +1,6 @@
 class Api::GamesController < ApplicationController
   before_action :validate_params, only: :start_game
-  # POST /api/games
+
   def start_game
     questions.each_with_index do |question, index| 
       Question.create!(
@@ -8,50 +8,50 @@ class Api::GamesController < ApplicationController
         prompt: question["question"], 
         answer: question["correct_answer"], 
         order: index + 1, 
-        game_id: game.id
+        game_id: created_game.id
       )
     end
 
     team_names.each do |team_name|
       Team.create!(
         name: team_name,
-        game_id: game.id
+        game_id: created_game.id
       )
     end
      
-    render json: game
+    render json: created_game
   end
 
- 
   def end_game
-    game = Game.find(params[:game_id])
-
     render json: {  
       teams: game.teams.map { |team| TeamSerializer.new(team) }
     }
-
   end
 
   private
 
   def game
-    @game ||= Game.create!(question_quantity: question_quantity)
-  end
-
-  def question_quantity
-    @question_quantity ||= params[:game][:question_qty].to_i
-  end
-
-  def game_difficulty
-    @game_difficulty ||= params[:game][:difficulty]
+    Game.find(params[:game_id])
   end
 
   def questions
-    @questions ||= QuestionService.get_questions(question_quantity, game_difficulty)
+    QuestionService.get_questions(question_quantity, game_difficulty)
+  end
+
+  def created_game
+    @created_game ||= Game.create!(question_quantity: question_quantity)
+  end
+
+  def question_quantity
+    params[:game][:question_qty].to_i
+  end
+
+  def game_difficulty
+    params[:game][:difficulty]
   end
 
   def team_names
-    @team_names ||= params[:game].except(:difficulty, :question_qty).values
+    params[:game].except(:difficulty, :question_qty).values
   end
 
   def validate_params
