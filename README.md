@@ -1,8 +1,8 @@
 # Trivia Night
 
-[Link](https://github.com/mckennapenley/trivia-night-rails) to React frontend
+See the [deployed app](https://trivia-night-1.herokuapp.com/)
 
-Will be deployed to Heroku in the near future!
+[Link](https://github.com/mckennapenley/trivia-night-rails) to React frontend
 
 #
 
