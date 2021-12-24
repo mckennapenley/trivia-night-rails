@@ -18,7 +18,7 @@ class Api::ResponsesController < ApplicationController
   end
 
   def exisiting_response
-    @exisiting_response ||= Response.find_by(team_id:params[:team_id], question_id:question_id)
+    @exisiting_response ||= Response.find_by(team_id: params[:team_id], question_id: question_id)
   end
 
   def teams
@@ -26,7 +26,7 @@ class Api::ResponsesController < ApplicationController
   end
   
   def question_id 
-    game.questions.find_by(order:params[:order]).id
+    game.questions.find_by(order: params[:order]).id
   end
 
   def different_from_previous_response?

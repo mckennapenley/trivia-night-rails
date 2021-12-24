@@ -13,8 +13,6 @@ class Api::TeamsController < ApplicationController
   end
 
   def teams
-    teams = game.teams
+    game.teams
   end
-
-
 end
