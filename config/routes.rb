@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   root to: 'home#index'
- 
+
   namespace :api, defaults: { format: 'json' } do
     post 'games/start_game', to: 'games#start_game'
     get 'games/:game_id/questions/:order', to: 'questions#show'
@@ -8,7 +10,5 @@ Rails.application.routes.draw do
     post 'games/:game_id/questions/:order/create', to: 'responses#create'
   end
 
-  
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
-

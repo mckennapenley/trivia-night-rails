@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'boot'
 
 require 'rails'
@@ -23,7 +25,7 @@ module Appp
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
-    config.autoload_paths += %W(#{config.root}/services)
+    config.autoload_paths += %W[#{config.root}/services]
 
     # Configuration for the application, engines, and railties goes here.
     #

@@ -1,18 +1,22 @@
-class Api::TeamsController < ApplicationController
-  def index
-    render json: { 
-      game: game, 
-      teams: teams.map { |team| TeamSerializer.new(team) }
-    }
-  end
+# frozen_string_literal: true
 
-  private
+module Api
+  class TeamsController < ApplicationController
+    def index
+      render json: {
+        game: game,
+        teams: teams.map { |team| TeamSerializer.new(team) }
+      }
+    end
 
-  def game
-    @game ||= Game.find(params[:game_id])
-  end
+    private
 
-  def teams
-    game.teams
+    def game
+      @game ||= Game.find(params[:game_id])
+    end
+
+    def teams
+      game.teams
+    end
   end
 end
