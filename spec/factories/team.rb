@@ -3,6 +3,6 @@
 FactoryGirl.define do
   factory :team do
     name 'team_name'
-    game_id 1
+    game
   end
 end
