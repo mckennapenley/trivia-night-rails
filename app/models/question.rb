@@ -9,4 +9,5 @@ class Question < ApplicationRecord
   
   has_many :responses
   has_many :teams, through: :responses
+  belongs_to :game
 end
