@@ -34,7 +34,7 @@ module Api
     end
 
     def different_from_previous_response?
-      exisiting_response && (exisiting_response.answered_correctly != params[:answered_correctly])
+      exisiting_response && exisiting_response.answered_correctly != params[:answered_correctly]
     end
   end
 end
