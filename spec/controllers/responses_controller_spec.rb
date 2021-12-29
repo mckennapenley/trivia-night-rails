@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Api::ResponsesController do
-  describe 'POST create with correct response' do
+  describe 'POST create' do
      let!(:game) { 
       FactoryGirl.create(:game)
     }
