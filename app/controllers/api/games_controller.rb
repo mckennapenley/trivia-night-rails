@@ -48,7 +48,6 @@ module Api
     end
 
     def validate_params
-       
       raise if team_names.join.empty? || question_quantity < 1 || game_difficulty.blank?
     end
   end

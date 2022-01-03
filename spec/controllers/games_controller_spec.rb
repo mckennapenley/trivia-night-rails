@@ -44,6 +44,17 @@ RSpec.describe Api::GamesController do
   end
 
   context 'when params are valid' do
+    let(:question_api_response) {
+      [{"category"=>"General Knowledge",
+      "type"=>"multiple",
+      "difficulty"=>"easy",
+      "question"=>"Which American-owned brewery led the country in sales by volume in 2015?",
+      "correct_answer"=>"D. G. Yuengling and Son, Inc",
+      "incorrect_answers"=>["Anheuser Busch", "Boston Beer Company", "Miller Coors"]
+    }
+    ]
+    }
+
     valid_params = { 
       game: { 
         question_qty: 1, 
@@ -51,6 +62,10 @@ RSpec.describe Api::GamesController do
         team1: 'team1_name' 
       } 
     }
+
+    before do
+      expect(QuestionService).to receive(:get_questions).and_return(question_api_response)
+    end
 
     it 'creates new Game record' do
       expect {
