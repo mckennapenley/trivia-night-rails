@@ -2,8 +2,8 @@
 
 FactoryGirl.define do
   factory :response do
-    answered_correctly false
     team
     question
+    answered_correctly false 
   end
 end

@@ -37,6 +37,7 @@ group :development, :test do
   gem 'pry'
   gem 'rspec-rails', '~> 5.0.0'
   gem 'rubocop', '~> 1.24', require: false
+  gem "webmock"
 end
 
 group :test do
