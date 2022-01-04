@@ -3,7 +3,13 @@ require 'rails_helper'
 RSpec.describe Api::GamesController do
   context 'when question quantity is invalid' do
     let(:params_with_invalid_question_quantity) {
-      { game: { question_qty: 0, difficulty: 'easy', team1: 'team1_name' } }
+      { 
+        game: { 
+          question_qty: 0, 
+          difficulty: 'easy', 
+          team1: 'team1_name' 
+        } 
+      }
     } 
 
     it 'raises error' do
@@ -15,7 +21,13 @@ RSpec.describe Api::GamesController do
 
   context 'when difficulty is invalid' do
     let(:params_with_invalid_difficulty) { 
-      { game: { question_qty: 1, difficulty: '', team1: 'team1_name' } }
+      { 
+        game: { 
+          question_qty: 1, 
+          difficulty: '', 
+          team1: 'team1_name' 
+        } 
+      }
     }
 
     it 'raises error' do
