@@ -10,7 +10,7 @@ See the [deployed app](https://trivia-night-1.herokuapp.com/)
 
 Trivia Night is an app that allows restaurants and bars to host their own team trivia night. Select question difficulty, number of questions, and enter as many teams as you want. Trivia Night will keep track of team score and reveal team rankings at the end!
 
-Builts with:
+Built with:
 
 - Ruby on Rails
 - React
