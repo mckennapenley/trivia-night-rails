@@ -2,7 +2,7 @@
 
 See the [deployed app](https://trivia-night-1.herokuapp.com/)
 
-[Link](https://github.com/mckennapenley/trivia-night-rails) to React frontend
+[Link](https://github.com/mckennapenley/trivia-night-react) to React frontend
 
 #
 
@@ -31,20 +31,23 @@ Builts with:
 
 ## Getting Started
 
-Running natively
-1.) Make sure your ruby environment is at least 3.0.0
+### Running natively <br>
+
+1.) Clone both the rails backend and [react frontend](https://github.com/mckennapenley/trivia-night-react) repos
+
+2.) Make sure your ruby environment is at least 3.0.0
 
 ```
 ruby --version
 ```
 
-2.) Make sure your node version is at least 16.13.1
+3.) Make sure your node version is at least 16.13.1
 
 ```
 node --version
 ```
 
-3.) bundle install <br>
+4.) bundle install <br>
 
 in rails folder:
 
@@ -53,7 +56,7 @@ gem install bundle
 bundle install
 ```
 
-4.) npm install <br>
+5.) npm install <br>
 
 in react folder:
 
@@ -61,7 +64,7 @@ in react folder:
 npm install
 ```
 
-5.) Create and migrate databases <br>
+6.) Create and migrate databases <br>
 
 in rails folder:
 
@@ -80,9 +83,10 @@ rails s
 in react folder:
 
 ```
-run npm start
-y
+npm run start
 ```
+
+Note: answering "y" to the prompt will open the app on localhost:3001, since localhost:3000 is already being used by the rails backend
 
 8.) Navigate to localhost:3001
 
