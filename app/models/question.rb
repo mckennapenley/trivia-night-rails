@@ -6,7 +6,7 @@ class Question < ApplicationRecord
   validates :points, presence: true
   validates :order, presence: true, numericality: { greater_than_or_equal_to: 1 }
   validates :game_id, presence: true
-  
+
   has_many :responses
   has_many :teams, through: :responses
   belongs_to :game

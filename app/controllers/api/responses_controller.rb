@@ -6,7 +6,8 @@ module Api
       if different_from_previous_response?
         exisiting_response.update!(answered_correctly: params[:answered_correctly])
       elsif !exisiting_response
-        Response.create(answered_correctly: params[:answered_correctly], team_id: params[:team_id], question_id: question_id)
+        Response.create(answered_correctly: params[:answered_correctly], team_id: params[:team_id],
+                        question_id: question_id)
       end
 
       render json: {
