@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Team < ApplicationRecord
-  validates :name, presence: true, allow_blank: false
+  validates :name, presence: true
   validates :game_id, presence: true
   has_many :responses
   has_many :questions, through: :responses

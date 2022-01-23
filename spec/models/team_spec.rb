@@ -5,15 +5,6 @@ require 'rails_helper'
 RSpec.describe Team do
   describe 'validations' do
     it { is_expected.to validate_presence_of(:name) }
-
-    context 'when name is a blank string' do
-      let(:team) { FactoryGirl.build(:team, name: '') }
-
-      it 'is not valid' do
-        expect(team.valid?).to eq(false)
-      end
-    end
-
     it { is_expected.to validate_presence_of(:game_id) }
   end
 
@@ -22,7 +13,6 @@ RSpec.describe Team do
       let(:team) { FactoryGirl.build(:team) }
 
       it 'calculates score' do
-        team.score
         expect(team.score).to eq(0)
       end
     end
@@ -33,7 +23,6 @@ RSpec.describe Team do
       let!(:response) { FactoryGirl.create(:response, answered_correctly: true, team: team, question: question) }
 
       it 'calculates score' do
-        team.score
         expect(team.score).to eq(100)
       end
     end

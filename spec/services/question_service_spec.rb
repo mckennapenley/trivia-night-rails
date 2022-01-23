@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe QuestionService do
-  context 'when .get_questions is called' do
+  describe '.get_questions' do
     let!(:question_qty) { 1 }
     let!(:difficulty) { 'easy' }
     let(:trivia_api_url) do
